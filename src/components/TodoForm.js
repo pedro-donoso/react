@@ -40,6 +40,7 @@ const TodoForm = ( {todoAdd}) => {
     
     // AGREGAR TAREA EN APP JS
     todoAdd(formValues);
+    setFormValues(initialFormValues);
     setError(null);
   }
 

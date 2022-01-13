@@ -25,7 +25,12 @@ const App = () => {
   // USO DEL HOOK DENTRO DEL COMPONENTE
   const [todos, setTodos]= useState(initialTodos);
   const [todoEdit, setTodoEdit] = useState(null)
+
   const todoDelete = (todoId) => {
+    if(todoId === todoEdit.id){
+      setTodoEdit(null);
+    }
+    
     const changedTodos = todos.filter(todo => todo.id !== todoId);
     setTodos(changedTodos);
   }

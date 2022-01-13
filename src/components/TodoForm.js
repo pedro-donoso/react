@@ -18,6 +18,11 @@ const TodoForm = ( {todoAdd, todoEdit, todoUpdate, setTodoEdit}) => {
     if(todoEdit){
       setFormValues(todoEdit);
     }
+
+    else{
+      setFormValues(initialFormValues);
+    }
+
     
   },[todoEdit])
 

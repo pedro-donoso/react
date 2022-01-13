@@ -1,10 +1,7 @@
 import React from 'react';
-
 // RECIBE FUNCIONES EN ARGUMENTO
 const Todo = ({todo, todoDelete, todoToogleCompleted, setTodoEdit}) => {
-
   return (
-
     <div className='card mt-2'>
       <div className='card-body'>
         <h1 className='card-title text-right'>
@@ -13,10 +10,8 @@ const Todo = ({todo, todoDelete, todoToogleCompleted, setTodoEdit}) => {
           onClick={() => todoToogleCompleted(todo.id)}
           // TEMPLATE STRING
           className={`btn btn-sm ${todo.completed ? 'btn-outline-success' : 'btn-success'} ml-2`}>
-        
         {/* CAMBIA SI ESTA LA TAREA COMPLETA */}
           {todo.completed ? 'Terminado' : 'Terminar'}
-
           </button>
         </h1>
         <p className='card-text text-right'>

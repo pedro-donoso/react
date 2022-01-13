@@ -6,7 +6,7 @@ const initialFormValues = {
   description: ''
 }
 
-const TodoForm = ( {todoAdd, todoEdit, todoUpdate}) => {
+const TodoForm = ( {todoAdd, todoEdit, todoUpdate, setTodoEdit}) => {
 
   // ESTADO SIEMPRE DENTRO COMPONENTE
 
@@ -77,6 +77,21 @@ const TodoForm = ( {todoAdd, todoEdit, todoUpdate}) => {
   return (
     <div>
       <h1>{todoEdit ? 'Editar tarea' : 'Nueva tarea'}</h1>
+
+      {
+        todoEdit && 
+
+        <button
+        onClick={()=>setTodoEdit(null)}
+      className="btn btn-sm btn-warning mb-2"
+      >
+      Cancelar edición
+      </button>
+
+      }
+
+      
+
     <form onSubmit={handleSubmit}>
       <input 
       type='text' 

@@ -30,9 +30,16 @@ const TodoForm = ( {todoAdd}) => {
       setError('Debes indicar un título')
       return;
     }
+
+    if(description === '') {
+      setError('Debes indicar una descripción');
+      return;
+    }
+
     
     // AGREGAR TAREA EN APP JS
     todoAdd(formValues);
+    setError(null);
   }
 
   return (
@@ -63,21 +70,15 @@ const TodoForm = ( {todoAdd}) => {
       </button>
     </form>
 
+    {/* MUESTRA MENSAJE TITULO VACIO */}
     {
-      error ? (
-
+      error && 
+      (
         <div className='alert alert-danger mt-2'>
     { error }
     </div>
-
-      ) : (
-
-        null
-
       )
     }
-
-    
 
     </div>
     

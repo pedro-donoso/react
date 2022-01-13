@@ -26,6 +26,8 @@ const App = () => {
   // USO DEL HOOK DENTRO DEL COMPONENTE
   const [todos, setTodos]= useState(initialTodos);
 
+  const [todoEdit, setTodoEdit] = useState(null)
+
   const todoDelete = (todoId) => {
 
 
@@ -74,6 +76,7 @@ const App = () => {
         todos={todos}
         todoDelete={todoDelete}
         todoToogleCompleted={todoToogleCompleted}
+        setTodoEdit={setTodoEdit}
 
         />
       </div>
@@ -82,6 +85,7 @@ const App = () => {
         <TodoForm 
 
         todoAdd={todoAdd}
+        todoEdit={todoEdit}
 
         />
       </div>

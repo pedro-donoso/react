@@ -1,7 +1,7 @@
 import React from 'react';
 
 // RECIBE FUNCIONES EN ARGUMENTO
-const Todo = ({todo, todoDelete, todoToogleCompleted}) => {
+const Todo = ({todo, todoDelete, todoToogleCompleted, setTodoEdit}) => {
 
   return (
 
@@ -24,7 +24,10 @@ const Todo = ({todo, todoDelete, todoToogleCompleted}) => {
         </p>
         <hr />
         <div className='d-flex justify-content-end'>
-          <button className='btn btn-sm btn-outline-primary mr-2'>
+          <button 
+          // CONVERTIR A FUNCION FLECHA
+          onClick={()=> setTodoEdit(todo)}
+          className='btn btn-sm btn-outline-primary mr-2'>
         Editar
         </button>
         {/* ELIMINA TO DO */}

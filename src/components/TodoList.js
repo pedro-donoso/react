@@ -3,7 +3,7 @@ import React from "react";
 import Todo from "./Todo";
 
 // RECIBE FUNCIONES
-const TodoList = ({ todos, todoDelete, todoToogleCompleted }) => {
+const TodoList = ({ todos, todoDelete, todoToogleCompleted, setTodoEdit }) => {
   return (
     <div>
       <h1 className="text-right">Soy TodoList</h1>
@@ -14,6 +14,7 @@ const TodoList = ({ todos, todoDelete, todoToogleCompleted }) => {
         key={todoTarea.id} 
         todoDelete={todoDelete}
         todoToogleCompleted={todoToogleCompleted}
+        setTodoEdit={setTodoEdit}
         />
       ))}
     </div>

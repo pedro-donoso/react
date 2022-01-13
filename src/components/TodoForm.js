@@ -1,18 +1,32 @@
-import React, {useState} from 'react';
+// IMPORTAR HOOKS
+import React, {useState, useEffect} from 'react';
 
 const initialFormValues = {
   title: '',
   description: ''
 }
 
-const TodoForm = ( {todoAdd}) => {
+const TodoForm = ( {todoAdd, todoEdit}) => {
 
   // ESTADO SIEMPRE DENTRO COMPONENTE
 
   const [formValues, setFormValues] = useState(initialFormValues)
   const {title,description} = formValues;
   const [error, setError]=useState(null);
-  const [successMessage, setSuccessMessage] = useState(null)
+  const [successMessage, setSuccessMessage] = useState(null);
+
+  // SE EJECUTA CUANDO UN STATE CAMBIA DE VALOR
+  useEffect(()=>{
+
+    // ACA
+
+    if(todoEdit){
+      setFormValues(todoEdit);
+    }
+    
+    
+  },[todoEdit])
+
 
   const handleInputChange = (e) => {
 

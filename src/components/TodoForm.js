@@ -12,6 +12,7 @@ const TodoForm = ( {todoAdd}) => {
   const [formValues, setFormValues] = useState(initialFormValues)
   const {title,description} = formValues;
   const [error, setError]=useState(null);
+  const [successMessage, setSuccessMessage] = useState(null)
 
   const handleInputChange = (e) => {
 
@@ -41,6 +42,12 @@ const TodoForm = ( {todoAdd}) => {
     // AGREGAR TAREA EN APP JS
     todoAdd(formValues);
     setFormValues(initialFormValues);
+    setSuccessMessage('Agregado con éxito');
+
+    setTimeout(()=>{
+      setSuccessMessage(null);
+    },3000);
+
     setError(null);
   }
 
@@ -81,6 +88,18 @@ const TodoForm = ( {todoAdd}) => {
     </div>
       )
     }
+
+    {/* MUESTRA MENSAJE DE ÉXITO */}
+    {
+      successMessage && 
+      (
+        <div className='alert alert-success mt-2'>
+    { successMessage }
+    </div>
+      )
+    }
+
+
 
     </div>
     

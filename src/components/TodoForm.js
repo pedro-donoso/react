@@ -24,6 +24,10 @@ const TodoForm = ( {todoAdd}) => {
   // EVITA QUE SE RECARGUE 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if(title === ''){
+      return;
+    }
     
 
     // AGREGAR TAREA EN APP JS

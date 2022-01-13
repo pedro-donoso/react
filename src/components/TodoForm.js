@@ -11,6 +11,7 @@ const TodoForm = ( {todoAdd}) => {
 
   const [formValues, setFormValues] = useState(initialFormValues)
   const {title,description} = formValues;
+  const [error, setError]=useState(null);
 
   const handleInputChange = (e) => {
 
@@ -26,14 +27,12 @@ const TodoForm = ( {todoAdd}) => {
     e.preventDefault();
 
     if(title === ''){
+      setError('Debes indicar un título')
       return;
     }
     
-
     // AGREGAR TAREA EN APP JS
-
     todoAdd(formValues);
-
   }
 
   return (
@@ -63,6 +62,23 @@ const TodoForm = ( {todoAdd}) => {
         Agregar tarea
       </button>
     </form>
+
+    {
+      error ? (
+
+        <div className='alert alert-danger mt-2'>
+    { error }
+    </div>
+
+      ) : (
+
+        null
+
+      )
+    }
+
+    
+
     </div>
     
   );

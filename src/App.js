@@ -58,13 +58,23 @@ const App = () => {
     }
 
     const changedTodos = [
+      newTodo,
       ...todos,
-      newTodo
     ]
 
     setTodos(changedTodos);
   }
 
+  const todoUpdate=(todoEdit)=>{
+
+    const changedTodos = todos.map(todo => (
+      todo.id === todoEdit.id
+      ? todoEdit
+      : todo
+    ))
+
+    setTodos(changedTodos);
+  }
 
   return (
     <div className='container mt-4'>
@@ -86,6 +96,7 @@ const App = () => {
 
         todoAdd={todoAdd}
         todoEdit={todoEdit}
+        todoUpdate={todoUpdate}
 
         />
       </div>

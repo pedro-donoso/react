@@ -6,7 +6,7 @@ const initialFormValues = {
   description: ''
 }
 
-const TodoForm = ( {todoAdd, todoEdit}) => {
+const TodoForm = ( {todoAdd, todoEdit, todoUpdate}) => {
 
   // ESTADO SIEMPRE DENTRO COMPONENTE
 
@@ -52,11 +52,20 @@ const TodoForm = ( {todoAdd, todoEdit}) => {
       return;
     }
 
-    
+    if(todoEdit){
+      // ACTUALIZANDO
+      todoUpdate(formValues);
+      setSuccessMessage('Actualizado con éxito');
+    }
+
+    else {
     // AGREGAR TAREA EN APP JS
     todoAdd(formValues);
-    setFormValues(initialFormValues);
     setSuccessMessage('Agregado con éxito');
+    }
+  
+    setFormValues(initialFormValues);
+  
 
     setTimeout(()=>{
       setSuccessMessage(null);
@@ -67,7 +76,7 @@ const TodoForm = ( {todoAdd, todoEdit}) => {
 
   return (
     <div>
-      <h1>Nueva tarea</h1>
+      <h1>{todoEdit ? 'Editar tarea' : 'Nueva tarea'}</h1>
     <form onSubmit={handleSubmit}>
       <input 
       type='text' 
@@ -89,7 +98,7 @@ const TodoForm = ( {todoAdd, todoEdit}) => {
 
       <button 
       className='btn btn-primary btn-block mt-2'>
-        Agregar tarea
+        { todoEdit ? 'Actualizar tarea' : 'Agregar tarea' }
       </button>
     </form>
 

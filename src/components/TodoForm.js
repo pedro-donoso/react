@@ -26,12 +26,13 @@ const TodoForm = ( {todoAdd}) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if(title === ''){
+    // TRIM ELIMINA ESPACIOS EN BLANCO
+    if(title.trim() === ''){
       setError('Debes indicar un título')
       return;
     }
-
-    if(description === '') {
+// TRIM ELIMINA ESPACIOS EN BLANCO
+    if(description.trim() === '') {
       setError('Debes indicar una descripción');
       return;
     }

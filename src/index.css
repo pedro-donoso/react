@@ -1,5 +1,12 @@
+/* FONDO */
+
 body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+
+  background-image: url("../src/herramientas-gestion-tareas-cabecera.png");
+background-size: cover;
+  background-repeat:repeat;
+  background-position-x:center;
+  background-position-y:center;
+  background-size: 50rem;
 }
+

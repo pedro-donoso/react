@@ -6,38 +6,25 @@ import Todo from "./Todo";
 const TodoList = ({ todos, todoDelete, todoToogleCompleted, setTodoEdit }) => {
   return (
     <div>
-      <h1 className="text-right">Lista de Tareas</h1>
+      <h2 className="text-right display-7">Lista de Tareas</h2>
 
-    {
-      todos.length === 0
-      ? (
+      {todos.length === 0 ? (
         <div className="alert alert-primary">
-          No hay tareas. Por favor agrega una 
+          Actualmente no hay tareas en la lista. Por favor comienza a agregar en el formulario.
         </div>
-      )
-
-        : 
-
-        (
-
-          todos.map((todoTarea) => (
-        <Todo 
-        todo={todoTarea} 
-        key={todoTarea.id} 
-        todoDelete={todoDelete}
-        todoToogleCompleted={todoToogleCompleted}
-        setTodoEdit={setTodoEdit}
-        />
-
+      ) : (
+        todos.map((todoTarea) => (
+          <Todo
+            todo={todoTarea}
+            key={todoTarea.id}
+            todoDelete={todoDelete}
+            todoToogleCompleted={todoToogleCompleted}
+            setTodoEdit={setTodoEdit}
+          />
         ))
-      )
-}
-</div>
+      )}
+    </div>
   );
-}
+};
 
 export default TodoList;
-
-
-
-

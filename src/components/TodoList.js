@@ -10,7 +10,7 @@ const TodoList = ({ todos, todoDelete, todoToogleCompleted, setTodoEdit }) => {
 
       {todos.length === 0 ? (
         <div className="alert alert-primary">
-          No hay tareas en la lista. Agrega desde el formulario.
+          Actualmente no hay tareas en la lista. Agregalas desde el formulario.
         </div>
       ) : (
         todos.map((todoTarea) => (

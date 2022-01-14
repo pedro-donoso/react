@@ -62,7 +62,7 @@ const TodoForm = ({ todoAdd, todoEdit, todoUpdate, setTodoEdit }) => {
   return (
     <div>
       <h3 className="text-center display-7">
-        {todoEdit ? "Editar tarea" : "Nueva tarea"}
+        {todoEdit ? "Editar tarea" : "Nueva"}
       </h3>
       {todoEdit && (
         <button
@@ -84,7 +84,7 @@ const TodoForm = ({ todoAdd, todoEdit, todoUpdate, setTodoEdit }) => {
         />
 
         <textarea
-          placeholder="Descripción"
+          placeholder="Contenido"
           className="form-control mt-2"
           value={description}
           name="description"
@@ -92,7 +92,7 @@ const TodoForm = ({ todoAdd, todoEdit, todoUpdate, setTodoEdit }) => {
         ></textarea>
 
         <button className="btn btn-primary btn-block mt-2">
-          {todoEdit ? "Actualizar tarea" : "Agregar tarea"}
+          {todoEdit ? "Actualizar tarea" : "Agregar"}
         </button>
       </form>
 
